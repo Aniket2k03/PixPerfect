@@ -1,13 +1,18 @@
-import { SignedIn, auth } from "@clerk/nextjs";
+import { SignedIn } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
-import Header from "@/components/shared/Header";
-import { Button } from "@/components/ui/button";
-import { plans } from "@/constants";
-import { getUserById } from "@/lib/actions/user.actions";
-import Checkout from "@/components/shared/Checkout";
-
+// import Header from "@/components/shared/Header";
+import Header from "@/app/components/shared/Header";
+// import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/button";
+// import { plans } from "@/constants";
+import { plans } from "@/app/constants";
+// import { getUserById } from "@/lib/actions/user.actions";
+import { getUserById } from "@/app/lib/actions/user.actions";
+// import Checkout from "@/components/shared/Checkout";
+import Checkout from "@/app/components/shared/Checkout";
 const Credits = async () => {
   const { userId } = auth();
 
